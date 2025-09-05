@@ -32,7 +32,7 @@ const UserPortal: React.FC = () => {
 
   const fetchTickets = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/tickets', {
+      const response = await axios.get('https://ticket-crm.onrender.com/api/tickets', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTickets(response.data);
@@ -51,7 +51,7 @@ const UserPortal: React.FC = () => {
 
     try {
       await axios.post(
-        'http://localhost:5000/api/tickets',
+        'https://ticket-crm.onrender.com/api/tickets',
         { query },
         { headers: { Authorization: `Bearer ${token}` } }
       );
