@@ -202,6 +202,37 @@ app.get('/api/admin/tickets', authenticateToken, async (req, res) => {
   }
 });
 
+// Update Ticket Status (Admin only)
+app.put('/api/admin/tickets/:id/status', authenticateToken, async (req, res) => {
+  try {
+    if (!req.user.isAdmin) {
+      return res.status(403).json({ message: 'Access denied' });
+    }
+
+    const { status } = req.body;
+    const { id } = req.params;
+
+    // Validate status
+    if (!['pending', 'checked'].includes(status)) {
+      return res.status(400).json({ message: 'Invalid status. Must be pending or checked' });
+    }
+
+    const ticket = await Ticket.findByIdAndUpdate(
+      id,
+      { status },
+      { new: true }
+    );
+
+    if (!ticket) {
+      return res.status(404).json({ message: 'Ticket not found' });
+    }
+
+    res.json({ message: 'Ticket status updated successfully', ticket });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
