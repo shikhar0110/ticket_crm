@@ -94,7 +94,7 @@ const AdminPanel: React.FC = () => {
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Admin Email
+                Admin Email      
               </label>
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-500" />
@@ -104,7 +104,7 @@ const AdminPanel: React.FC = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                  placeholder="admin@example.com"
+                  placeholder="admin.ss@gmail.com"
                 />
               </div>
             </div>
@@ -121,7 +121,7 @@ const AdminPanel: React.FC = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
-                  placeholder="Enter admin password"
+                  placeholder="Admin.ss"
                 />
               </div>
             </div>
