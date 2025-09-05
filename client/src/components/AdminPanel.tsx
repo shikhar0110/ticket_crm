@@ -31,7 +31,7 @@ const AdminPanel: React.FC = () => {
 
   const fetchTickets = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/admin/tickets', {
+      const response = await axios.get('https://ticket-crm.onrender.com/api/admin/tickets', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTickets(response.data);
@@ -46,7 +46,7 @@ const AdminPanel: React.FC = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/admin-login', {
+      const response = await axios.post('https://ticket-crm.onrender.com/api/admin-login', {
         email,
         password,
       });
