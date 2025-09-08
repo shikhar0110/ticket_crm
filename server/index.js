@@ -12,7 +12,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 // Middleware
 const corsOptions = {
   origin: [
-    'https://ticket-es6zorlsa-shikhar0110s-projects.vercel.app',
+    "https://ticket-crm-snowy.vercel.app",
     'http://localhost:3000',
     'http://localhost:5173',
     'http://127.0.0.1:5173'
